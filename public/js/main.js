@@ -10,6 +10,7 @@ const app = {
     startY: 0,
     allImages: {},
     currentAudio: null,
+    userHasInteracted: false,
 
     init() {
         console.log('App initialized');
@@ -965,45 +966,61 @@ forceReflowAndReposition() {
 
     async navigateToLink(link) {
         console.log('Navigating to link:', link);
-        
+
         await this.loadImage(link.targetImageId);
-        //alert(`Navigated to: ${this.allImages[link.targetImageId].originalName}`);
-        
+
+        // ← ВОТ ЭТО ГЛАВНОЕ — МУЗЫКА ВКЛЮЧАЕТСЯ ПРИ ЛЮБОМ ПЕРЕХОДЕ!
+        if (this.currentImage?.audio) {
+            // Если пользователь уже взаимодействовал (кликал) — можно играть сразу
+            if (window.userHasInteracted) {
+                this.playBackgroundMusic(this.currentImage.audio, this.currentImage.audioName);
+            } else {
+                // Если ещё не было клика — включаем при первом же взаимодействии
+                const unlockAudio = () => {
+                    window.userHasInteracted = true;
+                    this.playBackgroundMusic(this.currentImage.audio, this.currentImage.audioName);
+                    document.getElementById('image-container').removeEventListener('click', unlockAudio);
+                };
+                document.getElementById('image-container').addEventListener('click', unlockAudio, { once: true });
+            }
+        } else {
+            this.playBackgroundMusic(null);
+        }
+
+        // Подсветка целевого региона (если есть)
         if (link.targetRegionId) {
             setTimeout(() => {
                 const targetROI = document.getElementById(link.targetRegionId);
                 if (targetROI) {
                     targetROI.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    targetROI.style.boxShadow = '0 0 0 3px #ff9900';
-                    setTimeout(() => {
-                        targetROI.style.boxShadow = '';
-                    }, 3000);
+                    targetROI.style.boxShadow = '0 0 0 4px #ff9900';
+                    setTimeout(() => targetROI.style.boxShadow = '', 3000);
                 }
             }, 500);
         }
     },
 
-    showLinkSelection(links) {
-        let message = 'Select destination:\n\n';
-        links.forEach((link, index) => {
-            const image = this.allImages[link.targetImageId];
-            const regionInfo = link.targetRegionId ? ' (specific region)' : ' (whole image)';
-            message += `${index + 1}. ${image.originalName}${regionInfo}\n`;
-        });
+        showLinkSelection(links) {
+            let message = 'Select destination:\n\n';
+            links.forEach((link, index) => {
+                const image = this.allImages[link.targetImageId];
+                const regionInfo = link.targetRegionId ? ' (specific region)' : ' (whole image)';
+                message += `${index + 1}. ${image.originalName}${regionInfo}\n`;
+            });
 
-        const choice = prompt(message + '\nEnter number:');
-        const index = parseInt(choice) - 1;
-        
-        if (index >= 0 && index < links.length) {
-            this.navigateToLink(links[index]);
+            const choice = prompt(message + '\nEnter number:');
+            const index = parseInt(choice) - 1;
+
+            if (index >= 0 && index < links.length) {
+                this.navigateToLink(links[index]);
+            }
+        },
+
+        // ========== UTILITY METHODS ==========
+        saveData() {
+            alert('All data is automatically saved to the server');
         }
-    },
-
-    // ========== UTILITY METHODS ==========
-    saveData() {
-        alert('All data is automatically saved to the server');
-    }
-};
+    };
 
 // Initialize app when page loads
 document.addEventListener('DOMContentLoaded', () => {
