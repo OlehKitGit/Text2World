@@ -1,0 +1,305 @@
+{
+  "images": {
+    "d5343671-0799-434c-9ff9-9e6fb9b5a42c": {
+      "id": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "filename": "bf472f85-2890-4862-9b48-5c8c13934703.jpg",
+      "originalName": "Screenshot_1.jpg",
+      "path": "/uploads/bf472f85-2890-4862-9b48-5c8c13934703.jpg",
+      "uploadDate": "2025-11-27T17:18:49.921Z",
+      "regions": [
+        {
+          "id": "87b37669-cf91-4195-9a37-589b1c3ae765",
+          "x": 572,
+          "y": 441,
+          "width": 66,
+          "height": 25,
+          "name": "Тест",
+          "createdAt": "2025-11-27T18:02:00.701Z"
+        },
+        {
+          "id": "96e279d7-81b0-4f86-85f5-118608d8108e",
+          "x": 625,
+          "y": 338,
+          "width": 57,
+          "height": 30,
+          "name": "Тест2",
+          "createdAt": "2025-11-27T18:11:48.249Z"
+        },
+        {
+          "id": "2334acaa-335e-4bac-a9a9-e744394abd9c",
+          "x": 523,
+          "y": 394,
+          "width": 194,
+          "height": 31,
+          "name": "New Region 2",
+          "createdAt": "2025-11-27T18:21:02.863Z"
+        },
+        {
+          "id": "6e193e5e-a335-43f6-9235-a234f262517e",
+          "x": 510,
+          "y": 375,
+          "width": 250,
+          "height": 67,
+          "name": "New Region 2",
+          "createdAt": "2025-11-27T18:22:11.281Z"
+        },
+        {
+          "id": "42ba5165-e755-4686-8099-698bdfffb415",
+          "x": 536,
+          "y": 369,
+          "width": 148,
+          "height": 32,
+          "name": "1",
+          "createdAt": "2025-11-27T18:23:20.196Z"
+        }
+      ],
+      "description": ""
+    },
+    "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4": {
+      "id": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "filename": "e193f2b0-c058-4968-9fdb-23d3631cbacb.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/e193f2b0-c058-4968-9fdb-23d3631cbacb.png",
+      "uploadDate": "2025-11-27T17:19:09.094Z",
+      "regions": [
+        {
+          "id": "0a572409-deef-4974-842e-d2e7c51f3171",
+          "x": 666,
+          "y": 293,
+          "width": 134,
+          "height": 98,
+          "name": "Тест1",
+          "createdAt": "2025-11-27T18:02:15.437Z"
+        },
+        {
+          "id": "c82f8ae5-43d7-427b-9a98-b12bb7b3ec9d",
+          "x": 600,
+          "y": 304,
+          "width": 97,
+          "height": 83,
+          "name": "Тест1",
+          "createdAt": "2025-11-27T18:12:00.813Z"
+        },
+        {
+          "id": "42e215f6-bc5c-4ee8-9a01-285d88260ac1",
+          "x": 579,
+          "y": 273,
+          "width": 157,
+          "height": 113,
+          "name": "New Region 3",
+          "createdAt": "2025-11-27T18:22:27.183Z"
+        },
+        {
+          "id": "0503a85f-2d10-4a8b-baa8-1ce51b607e89",
+          "x": 575,
+          "y": 261,
+          "width": 155,
+          "height": 143,
+          "name": "New Region 1",
+          "createdAt": "2025-11-27T18:23:51.248Z"
+        }
+      ],
+      "description": ""
+    },
+    "f66c0955-eccb-4f13-814c-f58645bfa4c1": {
+      "id": "f66c0955-eccb-4f13-814c-f58645bfa4c1",
+      "filename": "23508b09-20d8-4bee-9067-812b971d8092.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/23508b09-20d8-4bee-9067-812b971d8092.png",
+      "uploadDate": "2025-11-27T17:31:17.875Z",
+      "regions": [
+        {
+          "id": "c016a8ce-0b9c-4dc9-be69-64b4b758bf03",
+          "x": 666,
+          "y": 287,
+          "width": 136,
+          "height": 109,
+          "name": "New Region",
+          "createdAt": "2025-11-27T18:21:23.143Z"
+        }
+      ],
+      "description": "",
+      "size": 501244,
+      "mimetype": "image/png"
+    },
+    "aa684ab7-1e93-4240-8144-18e37c152ee0": {
+      "id": "aa684ab7-1e93-4240-8144-18e37c152ee0",
+      "filename": "95755523-fd6b-4e68-a395-357abf9e5348.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/95755523-fd6b-4e68-a395-357abf9e5348.png",
+      "uploadDate": "2025-11-27T17:33:10.078Z",
+      "regions": [
+        {
+          "id": "f1178241-c739-4533-9d50-690bfce23956",
+          "x": 650,
+          "y": 236,
+          "width": 160,
+          "height": 144,
+          "name": "Тест3",
+          "createdAt": "2025-11-27T17:49:05.206Z"
+        }
+      ],
+      "description": "",
+      "size": 501244,
+      "mimetype": "image/png"
+    },
+    "1f99429c-52ed-47fc-b182-c13030e9a94b": {
+      "id": "1f99429c-52ed-47fc-b182-c13030e9a94b",
+      "filename": "dded9b2e-2c9c-44cf-849b-7f4ad4638a42.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/dded9b2e-2c9c-44cf-849b-7f4ad4638a42.png",
+      "uploadDate": "2025-11-27T17:44:58.283Z",
+      "regions": [
+        {
+          "id": "ea5271a9-55af-426c-97a6-e8f0f350ca6f",
+          "x": 573,
+          "y": 215,
+          "width": 119,
+          "height": 96,
+          "name": "Тест 1",
+          "createdAt": "2025-11-27T17:45:12.416Z"
+        },
+        {
+          "id": "304ef9b6-6e23-4acc-9dd3-9aba306cacf6",
+          "x": 815,
+          "y": 429,
+          "width": 104,
+          "height": 115,
+          "name": "Тест 2",
+          "createdAt": "2025-11-27T17:45:31.626Z"
+        }
+      ],
+      "description": "",
+      "size": 501244,
+      "mimetype": "image/png"
+    },
+    "9644aa7f-99b3-41a9-9985-eaf6d2f50d1f": {
+      "id": "9644aa7f-99b3-41a9-9985-eaf6d2f50d1f",
+      "filename": "46392285-8592-494d-8cb2-64790365a007.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/46392285-8592-494d-8cb2-64790365a007.png",
+      "uploadDate": "2025-11-27T17:58:54.313Z",
+      "regions": [
+        {
+          "id": "9fa48645-0601-4935-93b5-6e1c46fb84ed",
+          "x": 608,
+          "y": 229,
+          "width": 118,
+          "height": 86,
+          "name": "Тест1",
+          "createdAt": "2025-11-27T17:59:07.372Z"
+        },
+        {
+          "id": "dd02aa4c-c7d7-438e-bb2d-4c937d044cfe",
+          "x": 641,
+          "y": 254,
+          "width": 154,
+          "height": 131,
+          "name": "Тест1",
+          "createdAt": "2025-11-27T18:00:14.219Z"
+        }
+      ],
+      "description": "",
+      "size": 501244,
+      "mimetype": "image/png"
+    },
+    "97d9de52-5374-4467-8e8d-a23dad984a7e": {
+      "id": "97d9de52-5374-4467-8e8d-a23dad984a7e",
+      "filename": "164c78b8-09c6-4172-a2b3-b14aa1736026.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/164c78b8-09c6-4172-a2b3-b14aa1736026.png",
+      "uploadDate": "2025-11-27T18:11:33.281Z",
+      "regions": [],
+      "description": "",
+      "size": 501244,
+      "mimetype": "image/png"
+    },
+    "fa06eee2-409c-4338-ae1b-ec4698f9d3ae": {
+      "id": "fa06eee2-409c-4338-ae1b-ec4698f9d3ae",
+      "filename": "87b045f0-8dd6-4381-830e-0fa89aeea420.png",
+      "originalName": "vlcsnap-2025-05-10-09h20m10s047.png",
+      "path": "/uploads/87b045f0-8dd6-4381-830e-0fa89aeea420.png",
+      "uploadDate": "2025-11-27T18:20:37.699Z",
+      "regions": [
+        {
+          "id": "c929cb40-22a8-4cf8-84be-9ab1dd416f55",
+          "x": 666,
+          "y": 300,
+          "width": 103,
+          "height": 89,
+          "name": "New Region 1",
+          "createdAt": "2025-11-27T18:20:48.396Z"
+        }
+      ],
+      "description": "",
+      "size": 501244,
+      "mimetype": "image/png"
+    }
+  },
+  "links": [
+    {
+      "sourceImageId": "9644aa7f-99b3-41a9-9985-eaf6d2f50d1f",
+      "sourceRegionId": "9fa48645-0601-4935-93b5-6e1c46fb84ed",
+      "targetImageId": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "targetRegionId": "",
+      "id": "2b79fde7-ccec-4837-a2d4-8bd9d11f2767",
+      "createdAt": "2025-11-27T17:59:40.312Z"
+    },
+    {
+      "sourceImageId": "9644aa7f-99b3-41a9-9985-eaf6d2f50d1f",
+      "sourceRegionId": "9fa48645-0601-4935-93b5-6e1c46fb84ed",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": null,
+      "id": "6ca361a5-c198-4daa-b6e4-705019cc9b5c",
+      "createdAt": "2025-11-27T18:00:34.128Z"
+    },
+    {
+      "sourceImageId": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "sourceRegionId": "0a572409-deef-4974-842e-d2e7c51f3171",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": "87b37669-cf91-4195-9a37-589b1c3ae765",
+      "id": "9e456c6e-1436-4316-b5b3-97a9942aa177",
+      "createdAt": "2025-11-27T18:02:23.945Z"
+    },
+    {
+      "sourceImageId": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "sourceRegionId": "0a572409-deef-4974-842e-d2e7c51f3171",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": "96e279d7-81b0-4f86-85f5-118608d8108e",
+      "id": "1c97ccf5-28a2-4cb4-9f8b-b1667ddcf062",
+      "createdAt": "2025-11-27T18:12:32.094Z"
+    },
+    {
+      "sourceImageId": "f66c0955-eccb-4f13-814c-f58645bfa4c1",
+      "sourceRegionId": "c016a8ce-0b9c-4dc9-be69-64b4b758bf03",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": null,
+      "id": "link_2012cd47-0205-4fbd-96b9-9bad58e3ec2a",
+      "createdAt": "2025-11-27T18:21:37.060Z"
+    },
+    {
+      "sourceImageId": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "sourceRegionId": "42e215f6-bc5c-4ee8-9a01-285d88260ac1",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": "87b37669-cf91-4195-9a37-589b1c3ae765",
+      "id": "link_7fe65e5d-e3af-469e-ba2a-3887aac858f5",
+      "createdAt": "2025-11-27T18:22:44.543Z"
+    },
+    {
+      "sourceImageId": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "sourceRegionId": "0503a85f-2d10-4a8b-baa8-1ce51b607e89",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": null,
+      "id": "link_4c6d3f91-6c45-4142-aa18-8352d681c1f1",
+      "createdAt": "2025-11-27T18:24:21.063Z"
+    },
+    {
+      "sourceImageId": "2d705eed-5f38-4bc6-ab54-4a8ceb66efb4",
+      "sourceRegionId": "0503a85f-2d10-4a8b-baa8-1ce51b607e89",
+      "targetImageId": "d5343671-0799-434c-9ff9-9e6fb9b5a42c",
+      "targetRegionId": "96e279d7-81b0-4f86-85f5-118608d8108e",
+      "id": "link_1abba228-5247-4e7f-bfea-440f02f94647",
+      "createdAt": "2025-11-27T18:24:56.343Z"
+    }
+  ]
+}
