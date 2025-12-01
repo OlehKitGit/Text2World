@@ -1010,3 +1010,35 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded, initializing app...');
     app.init();
 });
+
+// === АВТОЗАПУСК ПЕРВОГО СЛАЙДА — КАК В КИНО! ===
+async function autoStartFirstSlide() {
+    try {
+        const response = await fetch('/api/images');
+        const images = await response.json();
+        const allIds = Object.keys(images);
+
+        if (allIds.length > 0) {
+            // Берём самый первый загруженный слайд (по дате — самый старый)
+            const firstImageId = allIds[0];
+            // Или, если хочешь по алфавиту: allIds.sort()[0]
+
+            console.log('Запускаем интерактивное кино с первого слайда:', images[firstImageId].originalName);
+            await app.loadImage(firstImageId);
+
+            // Опционально: скрываем "No Image" навсегда
+            document.getElementById('no-image').style.display = 'none';
+        }
+    } catch (err) {
+        console.log('Галерея пуста — ждём первого слайда от пользователя');
+    }
+}
+
+// Запускаем автозагрузку после инициализации приложения
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Page loaded, initializing app...');
+    app.init();
+    
+    // ← ВОТ ЭТО ГЛАВНОЕ!
+    setTimeout(autoStartFirstSlide, 500); // небольшая задержка, чтобы всё прогрузилось
+});
