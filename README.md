@@ -23,23 +23,11 @@ The project is deliberately split into two independent builds:
 
 ```bash
 git clone https://github.com/OlehKitGit/Text2World.git
-cd Text2World
-
-# Editor mode (draggable/resizable ROIs)
-cd editor
-node ../server.js
-# → open http://localhost:3001
-
-# Viewer mode (final film)
-# simply open viewer/index.html in any browser
+cd Text2World         
+npm install
+npm run editor
+npm run viewer
 ```
-
-On a server (VPS, Railway, Render, Fly.io, etc.)
-
-git clone https://github.com/OlehKitGit/Text2World.git
-cd Text2World
-node server.js
-
 Images & music → uploaded to uploads/
 Database (regions, links, music bindings) → data/database.json
 Static files available at /uploads
