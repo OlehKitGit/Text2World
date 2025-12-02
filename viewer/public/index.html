@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2World - Visual Notes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Simple Toolbar -->
+        <div id="toolbar">
+            <button onclick="app.showUploadModal()">Upload Image</button>
+            <button onclick="app.startRegionMode()">Add Region</button>
+            <button onclick="app.showLinkPanel()">Add Link</button>
+            <button onclick="app.showGalleryModal()">Gallery</button>
+            <button onclick="app.saveData()">Save</button>
+            <button id="lock-editing-btn" style="background:#d32f2f; color:white;">Lock Editing</button>
+        </div>
+
+        <!-- Workspace -->
+        <div id="workspace">
+            <div id="image-container">
+                <img id="main-image" src="" alt="Current Image" style="display: none;">
+                <div id="no-image">
+                    <h3>No Image Loaded</h3>
+                    <p>Upload an image or select one from the gallery to get started.</p>
+                </div>
+                <div id="roi-container"></div>
+            </div>
+            <!-- УДАЛИТЬ ЭТОТ БЛОК
+            <div id="info-panel">
+                <h3>Image Information</h3>
+                <div id="image-info">No image loaded</div>
+                <div id="regions-list"></div>
+            </div>-->
+           
+            <div id="audio-player" style="display: none; position: absolute; bottom: 20px; left: 20px; z-index: 10;">
+                <audio id="bg-music" loop></audio>
+                <div style="background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 8px; font-size: 12px;">
+                    <span id="audio-title">Music</span>
+                    <button onclick="toggleAudio()" style="margin-left: 10px; background: none; border: none; color: white; font-size: 18px;">Play/Pause</button>
+            </div>
+        </div>
+        
+</div>
+
+        <!-- Upload Modal -->
+        <div id="upload-modal" class="modal">
+            <div class="modal-content">
+                <span onclick="app.hideModal('upload')" class="close">&times;</span>
+                <h2>Upload New Image</h2>
+                <form onsubmit="app.handleUpload(event)">
+                    <div class="form-group">
+                        <label>Select Image:</label>
+                        <input type="file" id="image-file" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <textarea id="image-description" placeholder="Enter description..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Upload Image</button>
+                        <button type="button" onclick="app.hideModal('upload')">Cancel</button>
+                    </div>
+                </form>
+                <div id="upload-status"></div>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="modal">
+            <div class="modal-content">
+                <span onclick="app.hideModal('gallery')" class="close">&times;</span>
+                <h2>Image Gallery</h2>
+                <div id="gallery-grid">Loading...</div>
+            </div>
+        </div>
+
+        <!-- ROI Menu -->
+        <div id="roi-menu" class="roi-menu" style="display: none;">
+            <div onclick="app.renameSelectedROI()">Rename Region</div>
+            <div onclick="app.deleteSelectedROI()">Delete Region</div>
+            <div onclick="app.addLinkToROI()">Add Link</div>
+        </div>
+
+        <!-- Link Panel -->
+        <div id="link-panel" class="panel" style="display: none;">
+            <h3>Create Link</h3>
+            <div>
+                <select id="source-region">
+                    <option value="">Select Source Region</option>
+                </select>
+                <span>→</span>
+                <select id="target-image">
+                    <option value="">Select Target Image</option>
+                </select>
+                <select id="target-region">
+                    <option value="">Select Target Region</option>
+                </select>
+            </div>
+            <div>
+                <button onclick="app.createLink()">Create Link</button>
+                <button onclick="app.hideLinkPanel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

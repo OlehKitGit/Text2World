@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+}
+
+#toolbar {
+    background: #2d2d2d;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+#toolbar button {
+    background: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toolbar button:hover {
+    background: #5a5a5a;
+}
+
+#workspace {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+#image-container {
+    flex: 1;
+    background: black;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#no-image {
+    text-align: center;
+    color: #666;
+}
+
+#info-panel {
+    width: 300px;
+    background: #2d2d2d;
+    padding: 20px;
+    border-left: 1px solid #444;
+    overflow-y: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #2d2d2d;
+    width: 95%;
+    max-width: 1400px;
+    height: 90vh;                    /* ФИКСИРОВАННАЯ ВЫСОТА! */
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;                /* Важно! */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    background: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+}
+
+.form-actions {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background: #3a3a3a;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    background: #4a4a4a;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.gallery-item div {
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.ROI {
+    position: absolute;
+    border: 2px solid #0F9;
+    background: rgba(0, 255, 153, 0.2);
+    cursor: pointer;
+}
+
+.ROI.selected {
+    border-color: #F90;
+    background: rgba(255, 153, 0, 0.3);
+}
+
+.ROI_hint {
+    position: absolute;
+    top: -25px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.roi-menu {
+    position: absolute;
+    background: #2d2d2d;
+    border: 1px solid #555;
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.roi-menu div {
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+}
+
+.roi-menu div:hover {
+    background: #3a3a3a;
+}
+
+.roi-menu div:last-child {
+    border-bottom: none;
+}
+
+.panel {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    background: #2d2d2d;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    z-index: 100;
+}
+
+.panel select {
+    background: #3a3a3a;
+    color: white;
+    border: 1px solid #555;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.panel button {
+    background: #007acc;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.region-item {
+    background: #3a3a3a;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.success {
+    background: #2d5a2d;
+    color: #90ee90;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.error {
+    background: #5a2d2d;
+    color: #ee9090;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Add to existing CSS */
+.ROI.drawing {
+    border: 2px dashed #0F9 !important;
+    background: rgba(0, 255, 153, 0.1) !important;
+}
+
+.ROI.linked {
+    border-color: #ff9900 !important;
+    background: rgba(255, 153, 0, 0.1) !important;
+}
+
+.ROI.linked:hover {
+    background: rgba(255, 153, 0, 0.3) !important;
+    cursor: pointer;
+}
+
+/* Add these styles to your existing CSS */
+
+/* Gallery item improvements */
+.gallery-item {
+    position: relative;
+    background: #3a3a3a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-2px);
+    background: #4a4a4a;
+}
+
+.gallery-item-info {
+    padding: 10px;
+}
+
+.gallery-item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+
+.gallery-item-stats {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.gallery-item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-load, .btn-delete, .btn-small {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.btn-load {
+    background: #007acc;
+    color: white;
+}
+
+.btn-delete {
+    background: #d32f2f;
+    color: white;
+}
+
+.btn-small {
+    background: #666;
+    color: white;
+    padding: 2px 6px;
+    font-size: 10px;
+}
+
+.btn-load:hover {
+    background: #005a9e;
+}
+
+.btn-delete:hover {
+    background: #b71c1c;
+}
+
+.btn-small:hover {
+    background: #555;
+}
+
+/* ROI positioning fixes */
+#image-container {
+    position: relative;
+    overflow: auto;
+}
+
+#main-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.ROI {
+    position: absolute;
+    border: 2px solid #0F9;
+    background: rgba(0, 255, 153, 0.2);
+    cursor: move;
+    box-sizing: border-box;
+}
+
+.ROI.drawing {
+    border: 2px dashed #0F9 !important;
+    background: rgba(0, 255, 153, 0.1) !important;
+}
+
+.ROI.selected {
+    border-color: #F90 !important;
+    background: rgba(255, 153, 0, 0.3) !important;
+    z-index: 10;
+}
+
+.ROI.linked {
+    border-color: #ff9900 !important;
+    background: rgba(255, 153, 0, 0.1) !important;
+}
+
+.ROI.linked:hover {
+    background: rgba(255, 153, 0, 0.3) !important;
+    cursor: pointer;
+}
+
+.ROI_hint {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Region list improvements */
+.region-item {
+    background: #3a3a3a;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border-left: 3px solid #0F9;
+}
+
+.region-item:hover {
+    background: #4a4a4a;
+}
+
+/* Ensure proper image container behavior */
+#image-container {
+    position: relative;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+#main-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ROI positioning */
+#roi-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ROI {
+    position: absolute;
+    border: 2px solid #0F9;
+    background: rgba(0, 255, 153, 0.2);
+    cursor: move;
+    box-sizing: border-box;
+    pointer-events: all;
+}
+
+.ROI * {
+    pointer-events: none;
+}
+
+.ROI .ui-resizable-handle {
+    pointer-events: all;
+}
+
+#gallery-modal h2 {
+    flex-shrink: 0;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    background: #333;
+    border-bottom: 1px solid #444;
+}
+
+#gallery-grid {
+    flex: 1;
+    overflow-y: auto;     /* ← ВОТ ОНА — ПРОКРУТКА! */
+    padding: 20px;
+}
+
+#audio-player {
+    visibility: hidden;
+}
+
+/* САМАЯ ВАЖНАЯ СТРОКА — УБИВАЕТ ДВИЖЕНИЕ НАВСЕГДА */
+.ROI.locked-all {
+    pointer-events: auto !important;     /* можно кликать */
+    cursor: pointer !important;
+    user-select: none !important;
+    touch-action: none !important;
+    -webkit-user-drag: none !important;
+}
+
+
+
