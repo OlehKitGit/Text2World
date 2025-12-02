@@ -1,4 +1,4 @@
-Markdown# Text2World — Interactive Visual-Sound Cinema
+**Text2World** — Interactive Visual-Sound Cinema
 
 **Text2World** is an open-source tool and format for creating non-linear interactive films, visual novels, art installations, and storytelling experiences where the viewer navigates between image-based scenes by clicking on interactive regions (ROIs), while being fully immersed thanks to background music that changes with every frame.
 
