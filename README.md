@@ -23,6 +23,7 @@ The project is deliberately split into two independent builds:
 
 ```bash
 git clone https://github.com/OlehKitGit/Text2World.git
+
 cd Text2World-main/editor         
 npm install
 npm start
