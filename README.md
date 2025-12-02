@@ -15,7 +15,6 @@ The project is deliberately split into two independent builds:
 | `/editor`   | Full-featured editor (creator)   | Draw, move, resize ROIs • add music • create links |
 | `/viewer`   | Clean read-only version          | Nothing can be broken — only watch and click     |
 
-**Use `/viewer/index.html` as the public link** — it starts in locked mode by default (editing is impossible).
 You can use the "data" and "uploads" folders to move saved data.
 
 ## How to run
