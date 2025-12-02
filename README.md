@@ -23,10 +23,13 @@ The project is deliberately split into two independent builds:
 
 ```bash
 git clone https://github.com/OlehKitGit/Text2World.git
-cd Text2World         
+cd Text2World-main/editor         
 npm install
-npm run editor
-npm run viewer
+npm start
+
+cd Text2World-main/viewer         
+npm install
+npm start
 ```
 Images & music → uploaded to uploads/
 Database (regions, links, music bindings) → data/database.json
