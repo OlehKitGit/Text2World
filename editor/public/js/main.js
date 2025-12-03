@@ -414,6 +414,9 @@ forceReflowAndReposition() {
             // САМОЕ ВАЖНОЕ: ждём, пока браузер реально отрисует изображение
             await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
 
+            this.deselectROI();
+            const roiMenu = document.getElementById('roi-menu');
+            if (roiMenu) roiMenu.style.display = 'none';
             // ТОЛЬКО ТЕПЕРЬ загружаем регионы
             this.regions = image.regions || [];
             this.regions.forEach(region => this.createROI(region));
@@ -966,6 +969,14 @@ forceReflowAndReposition() {
 
     async navigateToLink(link) {
         console.log('Navigating to link:', link);
+
+        // ← ВОТ ЭТИ ДВЕ СТРОЧКИ — УБИВАЮТ СТАРОЕ МЕНЮ НАВСЕГДА!
+        this.deselectROI();                     // скрываем меню и снимаем выделение
+        const roiMenu = document.getElementById('roi-menu');
+        if (roiMenu) roiMenu.style.display = 'none';  // на всякий случай
+
+        await this.loadImage(link.targetImageId);
+        // ... весь остальной код (музыка, подсветка и т.д.)
 
         await this.loadImage(link.targetImageId);
 
